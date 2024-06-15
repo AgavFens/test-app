@@ -1,0 +1,249 @@
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 0.7fr auto 0.7fr;
+  grid-gap: 10px;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1; 
+  color: white;
+  size: 2px;
+  font-family: 'Oswald';
+
+}
+
+h1, img {
+  margin: 0;
+  z-index: 2;
+}
+
+img {
+  max-width: 100%;
+  position: relative;
+  z-index: 2; 
+}
+
+h1:first-child {
+  grid-column: 1 / 2;
+  color: white; 
+  background: none;
+  font-family: 'Oswald';
+  font-size: 50px;
+  display: inline;
+}
+
+h1:last-child {
+  grid-column: 3 / 4;
+  color: white; /* Устанавливаем белый цвет */
+  font-family: 'Oswald'; /* Оставляем текущий шрифт */
+  font-size: 10px; /* Устанавливаем меньший размер текста */
+  font-weight: bold;
+  display: inline;
+  z-index: 2; /* Убедимся, что текст выше контейнера */
+  margin: 0;
+}
+
+.container::before {
+  content: "";
+  position: fixed;
+  width: 160%;
+  height: 160%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; 
+}
+
+img:last-child {
+  position: fixed; 
+  top: 20px; 
+  left: 20px;
+  z-index: 2; 
+  margin-top: 10px;
+  margin-left: 10px;
+  z-index: 1;
+
+}
+.navigation {
+  position: fixed;
+  top: 10px; 
+  left: 55%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+}
+
+.navigation a {
+  margin: 10px 10px; 
+  color: grey;
+  text-decoration: none;
+  font-size: 20px; 
+  z-index: 2;
+
+}
+
+.navigation a:hover {
+  color: white;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  width: 160%; 
+  height: 160%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.order-button {
+  position: absolute;
+  top: 35px;
+  right: 000px; 
+  padding: 10px 35px;
+  background: linear-gradient(to right, #FF6A00, #FFD700); 
+  color: white;
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase; 
+}
+
+.order-button:hover {
+  background: linear-gradient(to right, #FFD700, #FF6A00); 
+}
+
+
+@media only screen and (min-width: 1024px){
+/* Ipad Pro*/
+img:last-child {
+  font-size: 40px;
+  
+}
+
+.container::before{
+  font-size: 40px;
+}
+
+.navigation{
+  font-size: 50px;
+  right: 130px;
+}
+img:last-child{
+  font-size: 50px;
+}
+h1:first-child {
+  font-size: 50px;
+}
+h1:last-child {
+  font-size: 50px;
+}
+body{
+  font-size: 50px;
+}
+
+img{
+  font-size: 50px;
+}
+
+.container{
+  font-size: 50px;
+}
+
+.order-button {
+  right: 100px;
+}
+
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+/*Note Buk*/
+.navigation{
+  font-size: 50px;
+}
+img:last-child{
+  font-size: 50px;
+}
+h1:first-child {
+  font-size: 50px;
+}
+h1:last-child {
+  font-size: 50px;
+}
+body{
+  font-size: 50px;
+}
+}
+
+@media only screen and (max-width: 932px) {
+/* Iphone 14 pro max*/
+h1:first-child {
+  font-size: 27px;
+}
+
+h1:last-child {
+  font-size: 27px;
+}
+
+img{
+  font-size: 25px;
+}
+
+.container{
+  bottom: 100px;
+}
+
+.navigation {
+  position: fixed;
+  top: 150px; 
+  left: 200px;
+  transform: translateX(-50%);
+  font-size: 50px;
+}
+
+.navigation a {
+  display: block;
+}
+
+.navigation a:nth-child(1) {
+  float: left;
+}
+
+.navigation a:nth-child(2) {
+  float: right;
+}
+
+.navigation a:nth-child(3) {
+  float: left;
+}
+.navigation a:nth-child(4) {
+  float: right;
+}
+
+img:last-child{
+  left: -20px;
+}
+
+.order-button{
+  top: 40px;
+}
+
+}
